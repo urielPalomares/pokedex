@@ -1,0 +1,53 @@
+.header-card {
+  background: transparent;
+  box-shadow: none;
+  margin-bottom: 0.5rem;
+}
+
+.header-content {
+  text-align: center;
+  overflow-x: auto;
+}
+
+.gradient-title {
+  background: linear-gradient(90deg, #ff3e7f 0%, #ffb347 40%, #00e0ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 32px #0008, 0 1px 0 #fff4;
+  margin-bottom: 0.5rem;
+}
+
+.explore-subtitle {
+  color: #00e0ff;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-shadow: 0 0 16px #00e0ffcc, 0 2px 8px #0006;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .header-card {
+    background: rgba(20,30,50,0.95);
+    border-radius: 0.7rem;
+    box-shadow: 0 2px 8px #00e0ff33;
+    margin-bottom: 0.3rem;
+  }
+  .header-content {
+    padding: 0.2rem 0.1rem;
+    text-align: center;
+  }
+  .gradient-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.1rem;
+  }
+  .explore-subtitle {
+    font-size: 0.7rem;
+    margin-bottom: 0.3rem;
+  }
+}

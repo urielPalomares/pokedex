@@ -1,0 +1,42 @@
+.error-card {
+  margin: 2rem auto 0 auto;
+  max-width: 600px;
+  padding: 1.5rem 1rem 1rem 1rem;
+  border-radius: 1.5rem;
+  background: rgba(255,255,255,0.10);
+  backdrop-filter: blur(18px) saturate(1.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+  border: 1.5px solid rgba(255,255,255,0.18);
+  text-align: center;
+}
+
+.error-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.error-icon {
+  color: #ff3e7f;
+  font-size: 3rem;
+  filter: drop-shadow(0 0 12px #ff3e7fcc);
+}
+
+.error-text h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.error-text p {
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.retry-button {
+  margin-top: 1rem;
+  border-radius: 1.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+} 

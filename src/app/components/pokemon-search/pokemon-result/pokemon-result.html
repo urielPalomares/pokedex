@@ -1,0 +1,87 @@
+<mat-card class="pokemon-card hero-card" *ngIf="pokemon">
+  <div class="hero-header-row">
+    <div class="hero-title-bar">
+      <span class="hero-name">{{ pokemon.name | titlecase }}</span>
+      <span class="hero-id">#{{ pokemon.id }}</span>
+    </div>
+    <button class="close-btn" (click)="back.emit()" aria-label="Cerrar">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="hero-chips-info-row">
+    <div class="hero-chips-row">
+      <div class="chip-list">
+        <mat-chip *ngFor="let type of pokemon.types" [ngStyle]="{'background': getTypeColor(type.type.name)}" class="type-chip">
+          {{ type.type.name | titlecase }}
+        </mat-chip>
+        <ng-container *ngFor="let ability of pokemon.abilities">
+          <mat-chip class="ability-chip" *ngIf="!ability.is_hidden">
+            {{ ability.ability.name | titlecase }}
+          </mat-chip>
+        </ng-container>
+      </div>
+    </div>
+    <div class="small-info-bar">
+      <div class="info-block">
+        <span>Altura</span>
+        <strong>{{ (pokemon.height / 10) | number:'1.2-2' }} m</strong>
+      </div>
+      <div class="info-block">
+        <span>Peso</span>
+        <strong>{{ (pokemon.weight / 10) | number:'1.2-2' }} kg</strong>
+      </div>
+      <div class="info-block">
+        <span>Exp. Base</span>
+        <strong>{{ pokemon.base_experience }}</strong>
+      </div>
+    </div>
+  </div>
+  <div class="hero-image-section">
+    <div class="carousel-container">
+      <button class="carousel-arrow left" (click)="prevSprite()" aria-label="Anterior">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+      <div class="carousel-preview left" *ngIf="hasPrev" (click)="selectSprite((currentSpriteIndex - 1 + spriteList.length) % spriteList.length)">
+        <img [src]="prevSpriteUrl" alt="Preview anterior" />
+      </div>
+      <div class="carousel-main">
+        <img [src]="mainSpriteUrl" alt="Sprite principal" />
+      </div>
+      <div class="carousel-preview right" *ngIf="hasNext" (click)="selectSprite((currentSpriteIndex + 1) % spriteList.length)">
+        <img [src]="nextSpriteUrl" alt="Preview siguiente" />
+      </div>
+      <button class="carousel-arrow right" (click)="nextSprite()" aria-label="Siguiente">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
+  </div>
+  <!-- Combat Stats estilo moderno -->
+  <div class="combat-stats-center">
+    <div class="combat-stats-box">
+      <div class="combat-stats-title-row">
+        <mat-icon class="combat-stats-title-icon">bolt</mat-icon>
+        <span class="combat-stats-title-text">COMBAT STATS</span>
+      </div>
+      <div class="combat-stats-rows">
+        <div class="combat-stats-col">
+          <div class="combat-stats-row" *ngFor="let stat of pokemon.stats.slice(0, 3)">
+            <span class="combat-stats-label">{{ formatStatName(stat.stat.name) }}</span>
+            <div class="combat-stats-bar-bg">
+              <div class="combat-stats-bar-fill" [style.width]="getStatPercentage(stat.base_stat) + '%'" ></div>
+            </div>
+            <span class="combat-stats-value">{{ stat.base_stat }}</span>
+          </div>
+        </div>
+        <div class="combat-stats-col">
+          <div class="combat-stats-row" *ngFor="let stat of pokemon.stats.slice(3, 6)">
+            <span class="combat-stats-label">{{ formatStatName(stat.stat.name) }}</span>
+            <div class="combat-stats-bar-bg">
+              <div class="combat-stats-bar-fill" [style.width]="getStatPercentage(stat.base_stat) + '%'" ></div>
+            </div>
+            <span class="combat-stats-value">{{ stat.base_stat }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>

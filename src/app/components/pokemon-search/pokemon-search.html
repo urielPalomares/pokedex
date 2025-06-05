@@ -1,0 +1,16 @@
+<div class="galaxy-bg">
+  <app-header></app-header>
+  <app-search-box *ngIf="!pokemon" [loading]="(loading | async) ?? false" (search)="searchPokemon($event)" (random)="searchRandomPokemon()"></app-search-box>
+  <app-loading *ngIf="loading | async"></app-loading>
+  <app-error *ngIf="error" [message]="error.message" (retry)="onSubmit()"></app-error>
+  <app-pokemon-result *ngIf="pokemon"
+    [pokemon]="pokemon"
+    [getTypeColor]="getTypeColor.bind(this)"
+    [getPokemonImageUrl]="getPokemonImageUrl.bind(this)"
+    [formatStatName]="formatStatName.bind(this)"
+    [getStatPercentage]="getStatPercentage.bind(this)"
+    [getStatColor]="getStatColor.bind(this)"
+    [hasAdditionalSprites]="hasAdditionalSprites.bind(this)"
+    (back)="clearSearch()">
+  </app-pokemon-result>
+</div>
