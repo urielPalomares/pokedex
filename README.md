@@ -17,7 +17,7 @@ Una Pokédex interactiva hecha con Angular, donde puedes buscar Pokémon, ver su
 
 1. **Clona el repositorio:**
    ```bash
-   git clone https://github.com/tu-usuario/tu-repo-pokedex.git
+   git clone https://github.com/urielPalomares/pokedex.git
    cd tu-repo-pokedex
    ```
 
@@ -69,6 +69,27 @@ Si tienes algún problema, revisa la documentación oficial de [Angular CLI](htt
 
 ## 👾 Créditos
 Hecho con ❤️ por Uriel usando Angular y la PokéAPI.
+
+---
+
+## ⏱️ Tiempo de desarrollo y tecnologías
+
+- ⏳ El desarrollo de este proyecto tomó aproximadamente **4 horas y media**.
+- 🛠️ Tecnologías utilizadas:
+  - **Angular** (framework principal)
+  - **TypeScript**
+  - **SCSS** (estilos y responsividad)
+  - **Angular Material** (componentes UI)
+  - **PokéAPI** (fuente de datos de Pokémon)
+  - **Netlify** (despliegue)
+
+---
+
+## 🌐 Demo en línea
+
+Puedes ver el proyecto funcionando aquí:
+
+[https://pokedex-uriel.netlify.app](https://pokedex-uriel.netlify.app)
 
 ---
 
