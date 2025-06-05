@@ -449,8 +449,8 @@
     max-width: 95vw !important;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 0.1rem;
-    padding-right: 0.1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   .carousel-main {
     width: 120px !important;
@@ -484,6 +484,7 @@
   .hero-chips-info-row {
     gap: 0.2rem;
     margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
   }
   .chip-list {
     gap: 0.15rem;

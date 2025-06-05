@@ -9,7 +9,7 @@
       <mat-icon matPrefix>search</mat-icon>
       <input 
         matInput 
-        placeholder="Buscar Pokémon por nombre o ID..." 
+        placeholder="Buscar Pokémon por nombre o ID" 
         [formControl]="searchControl"
         autocomplete="off"
         (keydown.enter)="onSubmit($event)"
@@ -18,11 +18,11 @@
     
     <div class="search-actions-row">
       <div class="suggestions-inline">
-        <mat-chip-set>
-          <mat-chip *ngFor="let name of suggestions" (click)="searchSuggested(name)" class="suggestion-chip">
+        <div class="suggestion-btn-set">
+          <button *ngFor="let name of suggestions" (click)="searchSuggested(name)" class="suggestion-chip-btn">
             {{ name }}
-          </mat-chip>
-        </mat-chip-set>
+          </button>
+        </div>
       </div>
       
       <div class="search-actions">

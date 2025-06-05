@@ -4,7 +4,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatChipsModule } from '@angular/material/chips';
 import { ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -12,13 +11,12 @@ import { CommonModule } from '@angular/common';
   selector: 'app-search-box',
   standalone: true,
   imports: [
-    CommonModule, 
-    MatCardModule, 
-    MatFormFieldModule, 
-    MatInputModule, 
-    MatButtonModule, 
-    MatIconModule, 
-    MatChipsModule, 
+    CommonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
     ReactiveFormsModule
   ],
   templateUrl: './search-box.html',
@@ -34,7 +32,7 @@ export class SearchBox {
     Validators.minLength(1)
   ]);
 
-  suggestions = ['pikachu', 'charizard', 'mewtwo', 'rayquaza'];
+  suggestions = ['pikachu', 'charizard', 'mewtwo'];
 
   onSubmit(event?: Event): void {
     if (event) {
